@@ -1,20 +1,24 @@
-from abc import abstractmethod
+from abc import abstractmethod, ABC
+from clean.domain.entities.short_url import ShortUrl
 
-
-class ShorterUrlStorageRepositoryInterface:
-
-    @abstractmethod
-    def insert_short_url(self, short_url : str ) -> bool:
-        raise NotImplementedError("Should implement get_short_url()")
+class ShorterUrlStorageRepositoryInterface(ABC):
 
     @abstractmethod
-    def get_short_url(self, url_id: int) -> str:
-        raise NotImplementedError("Should implement get_short_url()")
+    def insert_short_url(self, short_url : str) -> bool:
+        ...
 
     @abstractmethod
-    def delete_short_url(self, url_id: int) -> str:
-        raise NotImplementedError("Should implement delete_short_url()")
+    def get_short_url(self, url_id: str) -> ShortUrl:
+        ...
+
+    @abstractmethod
+    def get_short_url_str(self, long_url: str) -> str:
+        ...
+
+    @abstractmethod
+    def delete_short_url(self, short_url: int) -> str:
+        ...
 
     @abstractmethod
     def get_all_short_urls(self, ) -> []:
-        raise NotImplementedError("Should implement get_all_short_urls()")
+        ...

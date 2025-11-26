@@ -1,3 +1,4 @@
+from abc import ABC
 from typing import List
 
 from clean.domain.entities.short_url import ShortUrl
@@ -23,6 +24,12 @@ class ShorterUrlStorageRepository(ShorterUrlStorageRepositoryInterface):
             item_id=short_url_id
         )
         return short_url
+
+    def get_short_url_str(self, long_url: str) -> str:
+        url = self.data_source.get_by_long_url(
+            long_url=long_url
+        )
+        return url.short_url
 
     def delete_short_url(self, short_url_id: str) -> bool:
         result = self.data_source.delete_by_id(
