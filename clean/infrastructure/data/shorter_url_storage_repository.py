@@ -1,6 +1,6 @@
 from typing import List
 
-from clean.domain.model.short_url import ShortUrl
+from clean.domain.entities.short_url import ShortUrl
 from clean.domain.contracts.repository.i_shorter_url_storage_repository import ShorterUrlStorageRepositoryInterface
 from clean.infrastructure.data_source.i_data_source import DataSourceInterface
 
