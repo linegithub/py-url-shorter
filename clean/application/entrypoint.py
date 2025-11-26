@@ -1,4 +1,4 @@
-import main
+from clean.application import main
 
 if __name__ == "__main__":
     main.main()
