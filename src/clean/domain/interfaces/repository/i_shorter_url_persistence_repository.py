@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABC
-from clean.domain.entities.short_url import ShortUrl
+from src.clean.domain.entities.short_url import ShortUrl
 
 class ShorterUrlPersistenceRepositoryInterface(ABC):
 

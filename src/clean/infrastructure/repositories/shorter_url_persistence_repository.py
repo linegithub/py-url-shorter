@@ -1,8 +1,8 @@
 from typing import List
 
-from clean.domain.entities.short_url import ShortUrl
-from clean.domain.interfaces.repository.i_shorter_url_persistence_repository import ShorterUrlPersistenceRepositoryInterface
-from clean.domain.interfaces.data_source.i_data_source import DataSourceInterface
+from src.clean.domain.entities.short_url import ShortUrl
+from src.clean.domain.interfaces.repository.i_shorter_url_persistence_repository import ShorterUrlPersistenceRepositoryInterface
+from src.clean.domain.interfaces.data_source.i_data_source import DataSourceInterface
 
 class ShorterUrlPersistenceRepository(ShorterUrlPersistenceRepositoryInterface):
 

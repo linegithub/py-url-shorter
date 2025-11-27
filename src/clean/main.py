@@ -1,4 +1,4 @@
-from macarronic.url_shorter import UrlShorter
+from src.macarronic.url_shorter import UrlShorter
 
 def main():
     shortened_url_1 = UrlShorter.shorturl(

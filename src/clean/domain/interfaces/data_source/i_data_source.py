@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 from typing import List
 
-from clean.infrastructure.models.short_url_db_dto import ShortUrlPersistenceDTO
+from src.clean.infrastructure.models.short_url_db_dto import ShortUrlPersistenceDTO
 
 class DataSourceInterface(ABC):
 

@@ -1,9 +1,7 @@
-from datetime import datetime
-
 from sqids import Sqids
 
-from clean.domain.entities.short_url import ShortUrl
-from macarronic.get_last_url import get_last_id
+from src.clean.domain.entities.short_url import ShortUrl
+from src.macarronic.get_last_url import get_last_id
 
 class UrlShorter:
 
