@@ -1,3 +1,4 @@
 # pybase62==1.0.0
 # Flask==3.1.2
 sqids==0.5.2
+pytest==9.0.1
