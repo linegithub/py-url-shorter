@@ -3,30 +3,17 @@ import unittest
 from datetime import datetime
 
 from src.clean.infrastructure.datasource.in_memory_data_source import InMemoryDataSource
-from src.clean.infrastructure.models.short_url_db_dto import ShortUrlPersistenceDTO
-
-def empty_mock_item() -> ShortUrlPersistenceDTO:
-    return ShortUrlPersistenceDTO(
-        short_url="abc123",
-        long_url="http://www.google.com",
-        created_at=datetime.now(),
-        updated_at=datetime.now(),
-    )
-
-
-def clean_storage_dict() -> dict[str, ShortUrlPersistenceDTO]:
-    """Empty mock dictionary."""
-    return {}
+from tests.mocks.url_shorter_mocks import UrlShorterMocks
 
 
 class InMemoryDataSourceTest(unittest.TestCase) :
 
-    def test_save(self):
-        short_url_dictionary = clean_storage_dict()
+    def test_save_single_item(self):
+        short_url_dictionary = UrlShorterMocks.empty_persistence_dictionary()
         repo = InMemoryDataSource(
-            storage_dict= {}
+            storage_dict= short_url_dictionary
         )
-        item = empty_mock_item()
+        item = UrlShorterMocks.mock_empty_dto_item()
 
         result = repo.save(item)
 
@@ -44,11 +31,11 @@ class InMemoryDataSourceTest(unittest.TestCase) :
         )
 
     def test_delete_by_object(self):
-        short_url_dictionary = clean_storage_dict()
+        short_url_dictionary = UrlShorterMocks.empty_persistence_dictionary()
         repo = InMemoryDataSource(
             storage_dict=short_url_dictionary
         )
-        item = empty_mock_item()
+        item = UrlShorterMocks.mock_empty_dto_item()
 
         short_url_dictionary[item.short_url] = item
         result = repo.delete_by_object(item_to_delete= item)
