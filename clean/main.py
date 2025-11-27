@@ -1,6 +1,5 @@
 from macarronic.url_shorter import UrlShorter
 
-
 def main():
     shortened_url_1 = UrlShorter.shorturl(
         "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview"
@@ -16,4 +15,3 @@ def main():
     print(f"shortened url {shortened_url_1.short_url}")
     print(f"shortened url {shortened_url_2.short_url}")
     print(f"shortened url {shortened_url_3.short_url}")
-

@@ -1,11 +1,10 @@
-from abc import ABC
 from typing import List
 
 from clean.domain.entities.short_url import ShortUrl
-from clean.domain.contracts.repository.i_shorter_url_storage_repository import ShorterUrlStorageRepositoryInterface
-from clean.infrastructure.data_source.i_data_source import DataSourceInterface
+from clean.domain.interfaces.repository.i_shorter_url_persistence_repository import ShorterUrlPersistenceRepositoryInterface
+from clean.domain.interfaces.data_source.i_data_source import DataSourceInterface
 
-class ShorterUrlStorageRepository(ShorterUrlStorageRepositoryInterface):
+class ShorterUrlPersistenceRepository(ShorterUrlPersistenceRepositoryInterface):
 
     def __init__(
             self,
@@ -36,7 +35,6 @@ class ShorterUrlStorageRepository(ShorterUrlStorageRepositoryInterface):
             item_id_to_delete=short_url_id
         )
         return result
-
 
     def get_all_short_urls(self) -> List[ShortUrl]:
         list_of_short_urls = self.data_source.get_all()

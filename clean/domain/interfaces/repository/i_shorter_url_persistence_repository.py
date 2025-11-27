@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 from clean.domain.entities.short_url import ShortUrl
 
-class ShorterUrlStorageRepositoryInterface(ABC):
+class ShorterUrlPersistenceRepositoryInterface(ABC):
 
     @abstractmethod
     def insert_short_url(self, short_url : str) -> bool:
