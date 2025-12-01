@@ -1,5 +1,4 @@
-from macarronic.url_shorter import UrlShorter
-
+from src.macarronic.url_shorter import UrlShorter
 
 def main():
     shortened_url_1 = UrlShorter.shorturl(
@@ -16,4 +15,3 @@ def main():
     print(f"shortened url {shortened_url_1.short_url}")
     print(f"shortened url {shortened_url_2.short_url}")
     print(f"shortened url {shortened_url_3.short_url}")
-
